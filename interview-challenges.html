@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Challenges · Siddhant Mittal</title>
+  <meta name="description" content="Real product case studies completed during interviews at top startups - unfiltered product thinking, frameworks, and recommendations.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Interview Challenges · Siddhant Mittal">
+  <meta property="og:description" content="Real product case studies from interviews at top startups - actual prompts, frameworks, and recommendations. An unfiltered look at how I think.">
+  <meta property="og:image"       content="IMG_1647.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Interview Challenges · Siddhant Mittal">
+  <meta name="twitter:description" content="Real product case studies from interviews at top startups - actual prompts, frameworks, and recommendations. An unfiltered look at how I think.">
+  <meta name="twitter:image"       content="IMG_1647.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="avatar.jpeg" alt="Siddhant Mittal" class="nav__avatar">
+        <span class="nav__logo-name">Siddhant <span>Mittal</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html" class="active">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ─────────────────────────────────────────── -->
+  <header class="ic-hero" role="banner">
+    <div class="ic-hero__inner">
+      <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+      <p class="cs-hero__label">Real Interview Work · Product Strategy</p>
+      <h1 class="cs-hero__title" style="max-width:680px;">Startup Interview Challenges</h1>
+      <p class="cs-hero__subtitle" style="max-width:600px;">
+        Real product case studies from interviews at top startups - actual prompts, my thinking process, frameworks used, and the recommendations I made. An unfiltered look at how I approach product problems from scratch.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── CHALLENGES GRID ────────────────────────────────────── -->
+  <main class="section" id="main-content" aria-label="Interview challenges">
+    <div class="container">
+
+      <!--
+        Cards are auto-rendered from data.js where type = "interview-challenge".
+        If no items exist in data.js, the empty state below is shown automatically.
+
+        HOW TO ADD A CHALLENGE:
+        1. Open data.js
+        2. Add an object with type: "interview-challenge" to the CASE_STUDIES array
+        3. Create the HTML page (copy any case-study-X.html as template)
+        4. The card appears here automatically
+      -->
+      <div
+        class="cards-grid"
+        data-render="cards"
+        data-type="interview-challenge"
+        aria-live="polite"
+      ></div>
+
+    </div>
+  </main>
+
+  <!-- ── BACK TO WORK CTA ───────────────────────────────────── -->
+  <section class="section section--alt" aria-label="View main work">
+    <div class="container" style="text-align:center;">
+      <span class="section-label">My Core Work</span>
+      <h2 class="section-title" style="max-width:480px; margin: 12px auto 16px;">See the products I've built at Delivery Hero</h2>
+      <p class="section-subtitle" style="margin: 0 auto 32px;">Deep-dive case studies with the strategy, decisions, and real results.</p>
+      <a href="index.html#work" class="btn btn--primary">
+        View Case Studies
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__logo">Siddhant <span>Mittal</span></span>
+      <div class="footer__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/siddhant-mittal-5813b082/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <span class="footer__copy">© 2026 Siddhant Mittal</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

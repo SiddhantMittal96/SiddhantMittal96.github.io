@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: Update title and description -->
+  <title>AI-Powered Product Categorisation · Siddhant Mittal</title>
+  <meta name="description" content="How I built an AI system using Gemini LLMs and prototype-based ML to automate product categorisation at Delivery Hero, boosting accuracy by over 20% and contributing €10M+ incremental GMV.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="AI-Powered Product Categorisation · Siddhant Mittal">
+  <meta property="og:description" content="How I built an AI system using Gemini LLMs and prototype-based ML to automate product categorisation at Delivery Hero - >20% accuracy, €10M+ incremental GMV.">
+  <meta property="og:image"       content="IMG_1647.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="AI-Powered Product Categorisation · Siddhant Mittal">
+  <meta name="twitter:description" content="How I built an AI system using Gemini LLMs and prototype-based ML to automate product categorisation at Delivery Hero - >20% accuracy, €10M+ incremental GMV.">
+  <meta name="twitter:image"       content="IMG_1647.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="avatar.jpeg" alt="Siddhant Mittal" class="nav__avatar">
+        <span class="nav__logo-name">Siddhant <span>Mittal</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── CASE STUDY HERO ───────────────────────────────────── -->
+  <!-- EDIT: Update title, subtitle, role, dates, and the three metrics -->
+  <header class="cs-hero" role="banner" style="background: linear-gradient(160deg, #0f2351 0%, #1e3a8a 100%); position: relative; overflow: hidden;">
+    <img src="ai_backdrop.svg" aria-hidden="true" style="position:absolute; top:50%; right:-2%; transform:translateY(-50%); width:58%; height:auto; opacity:0.75; pointer-events:none;">
+    <div class="cs-hero__inner" style="position:relative; z-index:1;">
+      <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Work
+      </a>
+      <p class="cs-hero__label">Case Study · Delivery Hero · AI / ML</p>
+      <h1 class="cs-hero__title">AI-Powered Product Categorisation</h1>
+      <p class="cs-hero__subtitle">
+        Quick Commerce is the fast-delivery grocery model — think ordering milk and snacks and getting them in 15 minutes. Every product on these platforms needs to be placed in the right shopping category before it goes live. Ops specialists across 75+ countries were doing this by hand - making it slow (products sat offline for days) and error-prone (wrong categories meant customers simply couldn't find them). I built the AI system that does this automatically, cutting time-to-live from days to hours and driving €10M+ in incremental revenue.
+      </p>
+      <div class="cs-metrics" aria-label="Key outcomes">
+        <div class="cs-metric">
+          <div class="cs-metric__value">>20%</div>
+          <div class="cs-metric__label">Categorisation accuracy</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">€10M+</div>
+          <div class="cs-metric__label">Incremental GMV</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">2 live</div>
+          <div class="cs-metric__label">Brands deployed · 5 in pipeline</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── CASE STUDY BODY ───────────────────────────────────── -->
+  <!-- EDIT: Edit or add sections below. Each section uses class="cs-section" -->
+  <main class="cs-body" id="main-content">
+
+    <!-- SECTION: Overview -->
+    <section class="cs-section fade-up" aria-labelledby="overview-heading">
+      <div class="cs-section__label">Overview</div>
+      <h2 id="overview-heading">The Problem Worth Solving</h2>
+      <p>
+        Before a product goes live in any Quick Commerce shop, it needs to be placed in the right shopping category — think "Beverages → Soft Drinks" for a Coca-Cola, or "Health &amp; Beauty → Medicines" for paracetamol. Arrange all these categories into a hierarchy and you get a <strong>category tree</strong> — the navigation structure customers browse to find products in the app. Sounds simple - until you're managing hundreds of these trees across 75+ countries.
+      </p>
+      <p>
+        Every assignment was manual. An ops specialist would look at each product, look at the category list, and pick the best match - by hand. This was slow, inconsistent, and didn't scale. The result was delayed product availability (products sitting offline for days before going live), lost revenue from uncategorised products, and operational costs that grew with every new partner we onboarded.
+      </p>
+      <div class="callout callout--blue">
+        <div class="callout__label">Why category assignment is business-critical</div>
+        <p class="callout__text">
+          <strong>54% of shopping sessions on Talabat</strong> start from category browsing (vs. 38.9% via search). A product without a correct category assignment is effectively invisible to more than half of all customers. Every day of delay is revenue lost.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Two-Flow Architecture -->
+    <section class="cs-section fade-up" aria-labelledby="architecture-heading">
+      <div class="cs-section__label">Solution Architecture</div>
+      <h2 id="architecture-heading">Two Complementary Flows</h2>
+      <p>
+        The system I designed works on two parallel tracks that together cover the full universe of products needing categorisation:
+      </p>
+      <div class="callout callout--navy" style="margin-bottom: 20px;">
+        <div class="callout__label">Flow 1: Replication</div>
+        <p class="callout__text">
+          Simple idea: if the same product has already been categorised somewhere else, just copy that answer.
+          <br><br>
+          Take <strong>"Asahi Super Dry 500ml"</strong>. When a new vendor lists it, the system looks up every time this product has been categorised before - across all other vendors in that country. It finds 6 prior assignments: some say "Beers", some say "Beverages". It tallies the votes and assigns the winning category automatically - no human, no ML.
+          <br><br>
+        </p>
+      </div>
+      <figure class="cs-figure fade-up">
+        <img src="Replication.png" alt="Replication flow: Asahi Super Dry example showing majority-vote category assignment" class="cs-figure__img">
+        <figcaption class="cs-figure__caption">How replication works: the system tallies existing category assignments across vendors and picks the majority answer</figcaption>
+      </figure>
+      <div class="callout callout--blue">
+        <div class="callout__label">Flow 2: CATEX Recommendation Engine</div>
+        <p class="callout__text">
+          For products with no prior assignment to replicate, the <strong>CATEX Engine</strong> uses multimodal embeddings (product title + image) and prototype-based similarity to recommend the best-matching category.
+        </p>
+      </div>
+      <p>
+        When CATEX recommends a category, it also produces a <strong>confidence score</strong> — how sure the model is that it picked the right one. A pre-agreed threshold determines what happens next: high-confidence recommendations are auto-assigned with no human involvement; low-confidence ones go to an ops specialist for review. Where that threshold sits is agreed with each regional team before go-live, because some markets prioritise automation and others prioritise accuracy.
+      </p>
+      <figure class="cs-figure fade-up">
+        <img src="Auto Assignment flow.png" alt="End-to-end auto assignment flow: replication check, CATEX recommendation, confidence threshold, auto-assign or human review" class="cs-figure__img">
+        <figcaption class="cs-figure__caption">The complete flow: products are checked for replication first; if not replicable, CATEX recommends a category and the confidence score determines whether it auto-assigns or goes for human review</figcaption>
+      </figure>
+      <p>
+        The key design decision was building a <strong>single unified flow</strong> that covers both cases. Products enter one pipeline; replication is checked first; CATEX fires for whatever remains. This reduced system complexity and made the end-to-end automation story clean and auditable.
+      </p>
+    </section>
+
+    <!-- SECTION: PM Craft -->
+    <section class="cs-section fade-up" aria-labelledby="pmcraft-heading">
+      <div class="cs-section__label">PM Craft</div>
+      <h2 id="pmcraft-heading">Designing the Review Experience</h2>
+      <p>
+        Design capacity is one of the quiet constraints in most product teams. On the Friday before my vacation, I asked the designer where we stood on the review UI. The answer: we'll pick it up next week. The problem: I was leaving Tuesday — which meant the designer had Monday, and Monday alone, to produce something from scratch. Realistically, not enough.
+      </p>
+      <p>
+        I'd been seeing articles on LinkedIn about AI design tools — Lovable, Bolt, others — and PMs experimenting with them. I figured: why not try. Over the weekend, I built a working prototype of the review UI in <strong>Lovable</strong>, using the existing Catalog UI as a starting point.
+      </p>
+      <p>
+        Monday morning, I came in with something to react to. A few sessions later, we were aligned on the direction. The designer had a clear brief and a working strawman to translate into Figma. We were in good shape before I left.
+      </p>
+      <p>
+        If I hadn't done this, the team would have had two weeks with nothing to build against. A small decision on a Friday afternoon — and a weekend experiment — kept the project moving.
+      </p>
+      <figure class="cs-figure fade-up">
+        <img src="Lovable_prototypr.png" alt="Catalog UI prototype built in Lovable showing AI category recommendations with Accept/Change Category actions" class="cs-figure__img" style="border: 1px solid var(--border); border-radius: 8px;">
+        <figcaption class="cs-figure__caption">
+          The Lovable prototype — ops specialists see the AI-recommended category per product and can Accept or change it inline.
+          <a href="https://catalog-job-details-viewer.lovable.app" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: var(--blue); font-weight: 500;">View live prototype →</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION: How CATEX Works -->
+    <section class="cs-section fade-up" aria-labelledby="catex-heading">
+      <div class="cs-section__label">Technical Deep-Dive</div>
+      <h2 id="catex-heading">How the CATEX Engine Works</h2>
+      <p style="font-size:0.9rem; color:var(--text-muted); border-left: 3px solid var(--border); padding-left:12px; margin-bottom:24px;">
+        Not technical? The key takeaway is this: the system is lightweight, accurate, and doesn't need expensive infrastructure. Skip to the next section if you'd like.
+      </p>
+      <p>
+        I deliberately chose a <strong>prototype-based similarity approach</strong> over a traditional classification model. The reasons: no GPU training infrastructure needed, incremental updates possible at the country or category tree level, and a safe deployment pattern where new model versions only go live if they're measurably better.
+      </p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-step__number">1</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Product Validation via Gemini 2.5 Flash</div>
+            <div class="flow-step__desc">Sample products are validated at the category level using an LLM, building a high-quality golden dataset — the training signal for the model.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">2</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Multimodal Embedding Generation</div>
+            <div class="flow-step__desc">Each product is encoded into a 1,408-dimensional vector capturing both text (title, brand, language) and image (colour, shape, packaging) in a single representation.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">3</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Prototype Creation per Category</div>
+            <div class="flow-step__desc">For each category, a prototype is computed as the average of all validated product embeddings — one vector representing the typical product in that category.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">4</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Classification via Cosine Similarity</div>
+            <div class="flow-step__desc">A new product's embedding is compared to all category prototypes. Closest match wins — and the similarity score becomes the confidence score.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">5</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Auto-Assignment Threshold</div>
+            <div class="flow-step__desc">The model is evaluated on two metrics. <strong>Tree accuracy</strong>: across the entire category tree, what % of test products were assigned to the correct category. <strong>Category precision</strong>: at an individual category level, what % were correct. Category precision becomes the confidence score for each recommendation.<br><br>A threshold is then set per country × category tree and agreed with the regional team during a 2–3 week calibration phase. Set it too high: few products auto-assign and ops specialists are buried in manual reviews. Set it too low: products auto-assign even when the model isn't confident — wrong categorisations slip through and products become invisible to customers browsing that category. The right threshold is a business decision as much as a technical one.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout--navy">
+        <div class="callout__label">Why prototype-based? Why not a classifier?</div>
+        <p class="callout__text">
+          Traditional classifiers require retraining when categories change. Prototype-based similarity only requires recomputing the affected category's prototype - a lightweight, fast operation. This was critical for Glovo, which has <strong>800+ category trees</strong> to support. No GPU infrastructure, no retraining pipelines - just vector math.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Rollout -->
+    <section class="cs-section fade-up" aria-labelledby="rollout-heading">
+      <div class="cs-section__label">Go-to-Market</div>
+      <h2 id="rollout-heading">Phased Global Rollout</h2>
+      <p>
+        Rolling out an AI system across 75+ countries is fundamentally a <strong>sequencing problem</strong>. Scale too fast and you're committing to untested assumptions — corrections that would be small in one market become expensive across many.
+      </p>
+      <div class="rollout-phases">
+        <div class="rollout-phase rollout-phase--done">
+          <div class="rollout-phase__label">Phase 1 · Done</div>
+          <div class="rollout-phase__brand">PeYa</div>
+          <div class="rollout-phase__detail">16 countries · Latin America</div>
+        </div>
+        <div class="rollout-phase__arrow">→</div>
+        <div class="rollout-phase rollout-phase--done">
+          <div class="rollout-phase__label">Phase 2 · Done</div>
+          <div class="rollout-phase__brand">Glovo</div>
+          <div class="rollout-phase__detail">25+ countries · Europe &amp; Africa</div>
+        </div>
+        <div class="rollout-phase__arrow">→</div>
+        <div class="rollout-phase rollout-phase--pipeline">
+          <div class="rollout-phase__label">Phase 3 · In Pipeline</div>
+          <div class="rollout-phase__brand">Talabat · HS · Pandora</div>
+          <div class="rollout-phase__detail">Global rollout</div>
+        </div>
+      </div>
+      <p>
+        <strong>The decision to start with PeYa was both strategic and deliberate.</strong> They were deprecating existing services, which created urgency and organisational alignment — the kind of forcing function that accelerates adoption in ways a voluntary rollout rarely achieves. Their contained environment also let us validate core assumptions about model performance, ops specialist workflows, and threshold calibration before committing those decisions to markets ten times the size.
+      </p>
+      <p>
+        The hypothesis going in: <em>if we can make this work cleanly at PeYa, we know what we're bringing to Glovo.</em> It held. PeYa's teams surfaced edge cases and workflow friction that sharpened both the model and the review experience. That signal directly shaped how we approached Glovo's 800+ category trees.
+      </p>
+      <p>
+        We're now entering the broader rollout — Talabat, HungerStation, Pandora — with a product that has been stress-tested at real scale, in real markets, with real user feedback built in. <strong>The confidence is earned, not assumed.</strong>
+      </p>
+    </section>
+
+    <!-- SECTION: Results -->
+    <section class="cs-section fade-up" aria-labelledby="results-heading">
+      <div class="cs-section__label">Impact</div>
+      <h2 id="results-heading">Results</h2>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-item__value">>20%</div>
+          <div class="impact-item__label">Categorisation accuracy improvement</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">€10M+</div>
+          <div class="impact-item__label">Incremental revenue from faster product go-live</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">2</div>
+          <div class="impact-item__label">Major brands fully deployed</div>
+        </div>
+      </div>
+      <p style="margin-top: 24px;">
+        The core revenue impact comes from getting products live faster. Products that previously waited days for manual categorisation now go live within hours - or automatically, for high-confidence recommendations. Every day a product is live is a day it can sell.
+      </p>
+      <p>
+        Beyond direct revenue, the initiative eliminated a significant operational bottleneck. Ops specialists can focus on genuinely ambiguous cases rather than routine assignments. Regional catalog teams have moved from reactive to proactive.
+      </p>
+    </section>
+
+    <!-- SECTION: What I Owned -->
+    <section class="cs-section fade-up" aria-labelledby="ownership-heading">
+      <div class="cs-section__label">Product Leadership</div>
+      <h2 id="ownership-heading">What I Owned as PM</h2>
+      <ul>
+        <li><strong>Problem framing and prioritisation.</strong> Identified manual categorisation as the highest-leverage bottleneck in the product listing funnel and built the business case that took this from a hackathon idea to a funded initiative.</li>
+        <li><strong>Shaping technical direction.</strong> Was an active voice in architecture discussions — pushing for a lightweight, infrastructure-light approach that could scale without GPU investment. Not the engineer making the calls, but the PM defining the constraints those calls had to respect.</li>
+        <li><strong>Rollout sequencing and GTM.</strong> Designed the phased rollout strategy, owned market prioritisation (PeYa → Glovo → remaining brands), and defined what each phase needed to prove before we scaled further.</li>
+        <li><strong>Regional alignment and threshold decisions.</strong> The hardest part of the rollout wasn't technical — it was getting regional teams across 5 brands to understand how the system works, trust the model, and commit to a threshold that balanced automation against accuracy. Each market had different risk tolerances. Getting them to that decision was a sustained PM effort.</li>
+        <li><strong>Human-in-the-loop experience.</strong> For low-confidence recommendations, an ops specialist sees the AI's suggestion and accepts or rejects it. Designing that review flow — what they see, how they decide, how feedback loops back — was a first-class product decision, not an afterthought.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION: Learnings -->
+    <section class="cs-section fade-up" aria-labelledby="learnings-heading">
+      <div class="cs-section__label">Reflections</div>
+      <h2 id="learnings-heading">What I Learned</h2>
+      <ul>
+        <li><strong>Lightweight ML architecture wins at scale.</strong> Prototype-based similarity, no GPU training, incremental updates - these choices meant we could serve 800+ Glovo trees without infrastructure investment that would have killed the business case.</li>
+        <li><strong>Auto-assignment threshold calibration is a PM problem, not just a data problem.</strong> Too high: ops specialists drown in manual reviews, negating the automation benefit. Too low: wrong categories auto-assign, making products invisible to customers. The right answer isn't in the data — it's in what each market is willing to trade off. Regional teams needed to sign off because their tolerance differed significantly by market.</li>
+        <li><strong>Human-in-the-loop design is a first-class product decision.</strong> The flow for low-confidence recommendations - URL to Catalog UI, accept/reject per row - had to be designed carefully. A bad review UX would undermine adoption even with a good model.</li>
+      </ul>
+    </section>
+
+    <!-- Navigation between case studies -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:40px; border-top: 1px solid var(--border); margin-top: 24px;">
+      <a href="case-study-1.html" class="btn btn--outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous Case Study
+      </a>
+      <a href="interview-challenges.html" class="btn btn--primary">
+        Interview Challenges
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__logo">Siddhant <span>Mittal</span></span>
+      <div class="footer__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/siddhant-mittal-5813b082/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <span class="footer__copy">© 2026 Siddhant Mittal</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

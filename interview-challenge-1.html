@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimentation at Scale · Siddhant Mittal</title>
+  <meta name="description" content="Interview challenge: designing an end-to-end experimentation platform strategy for a high-scale sports product - pillars, vision, and a phased roadmap to AI.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Experimentation at Scale · Siddhant Mittal">
+  <meta property="og:description" content="PM interview challenge: end-to-end experimentation strategy for a high-scale sports platform.">
+  <meta property="og:image"       content="IMG_1647.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Experimentation at Scale · Siddhant Mittal">
+  <meta name="twitter:description" content="PM interview challenge: end-to-end experimentation strategy for a high-scale sports platform.">
+  <meta name="twitter:image"       content="IMG_1647.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ── DREAM11 THEME OVERRIDES ─────────────────────────────── -->
+  <style>
+    /* Section labels: Dream11 red */
+    .cs-section__label { color: #E1261C; }
+    .cs-section__label::after { background: #E1261C; }
+
+    /* Callouts */
+    .callout--blue { background: #fff1f0; border-left-color: #E1261C; }
+    .callout--blue .callout__label { color: #E1261C; }
+    .callout--navy { background: #0c1220; border-left-color: #E1261C; }
+    .callout--navy .callout__label { color: #ff6b55; }
+    .callout--navy .callout__text { color: rgba(255,255,255,0.82); }
+    .callout--navy .callout__text strong { color: #ffffff; }
+    .callout--green { background: #fff8e6; border-left-color: #f59e0b; }
+    .callout--green .callout__label { color: #b45309; }
+
+    /* Pillar cards */
+    .principle-card__number { color: #E1261C; }
+    .pillar-metric { background: #fff1f0; color: #E1261C; }
+
+    /* Spot-the-difference game */
+    .sdiff-btn { background: #E1261C; }
+    .sdiff-btn:hover { background: #c01919; }
+    .sdiff-insight { background: #fff1f0; border-color: #fca5a5; }
+    .sdiff-insight strong { color: #E1261C; }
+
+    /* Situation cards - red icon accent */
+    .situation-card__title { color: #0c1220; }
+
+    /* Impact blocks */
+    .impact-block__outcome { color: #E1261C; }
+
+    /* NOW/NEXT/LATER roadmap - red → orange → gold */
+    .roadmap-col--now   { border-top-color: #E1261C; }
+    .roadmap-col--now   .roadmap-phase { color: #E1261C; }
+    .roadmap-col--next  { border-top-color: #f97316; }
+    .roadmap-col--next  .roadmap-phase { color: #f97316; }
+    .roadmap-col--later { border-top-color: #f59e0b; }
+    .roadmap-col--later .roadmap-phase { color: #f59e0b; }
+
+    /* Bottom nav buttons */
+    .btn--primary { background: #E1261C; box-shadow: 0 4px 14px rgba(225,38,28,0.35); }
+    .btn--primary:hover { background: #c01919; box-shadow: 0 6px 20px rgba(225,38,28,0.45); }
+    .btn--outline { border-color: #E1261C; color: #E1261C; }
+    .btn--outline:hover { background: #fff1f0; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="avatar.jpeg" alt="Siddhant Mittal" class="nav__avatar">
+        <span class="nav__logo-name">Siddhant <span>Mittal</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html" class="active">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── CASE STUDY HERO ───────────────────────────────────── -->
+  <header class="cs-hero" role="banner" style="background: linear-gradient(150deg, #0c1220 0%, #1a0608 100%); position: relative; overflow: hidden;">
+    <img src="exp_backdrop.svg" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; opacity:0.9; pointer-events:none;">
+    <div aria-hidden="true" style="position:absolute; inset:0; background:rgba(10,8,18,0.4); pointer-events:none; z-index:0;"></div>
+    <div class="cs-hero__inner" style="position:relative; z-index:1;">
+      <a href="interview-challenges.html" class="cs-hero__back" aria-label="Back to interview challenges">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Challenges
+      </a>
+      <p class="cs-hero__label">Interview Challenge · Dream11 · Product Strategy</p>
+      <h1 class="cs-hero__title">Experimentation: Building for Impact at Scale</h1>
+      <p class="cs-hero__subtitle">
+        A real take-home challenge from a PM interview at a leading sports platform. I designed a full experimentation platform strategy - from first principles to a phased roadmap ending in AI-powered experiment intelligence.
+      </p>
+      <div class="cs-metrics" aria-label="Key outcomes">
+        <div class="cs-metric">
+          <div class="cs-metric__value">3</div>
+          <div class="cs-metric__label">Core strategic pillars</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">NOW→AI</div>
+          <div class="cs-metric__label">Phased platform roadmap</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">$200M</div>
+          <div class="cs-metric__label">Google precedent that opened the deck</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── CASE STUDY BODY ───────────────────────────────────── -->
+  <main class="cs-body" id="main-content">
+
+    <!-- SECTION: The Challenge -->
+    <section class="cs-section fade-up" aria-labelledby="challenge-heading">
+      <div class="cs-section__label">The Challenge</div>
+      <h2 id="challenge-heading">The Interview Prompt</h2>
+      <p>
+        This was a take-home product challenge given during a PM interview at <strong>Dream11</strong> - India's largest fantasy sports platform, with 200M+ users. The brief was open-ended: <strong>design an experimentation strategy that can support the company at scale.</strong> No constraints, no prescribed format, just a blank canvas.
+      </p>
+      <p>
+        I treated this the way I'd treat any real product problem - start from the user (in this case, the product teams who need to make decisions), understand the business context, and work backwards to a strategy with clear principles and a concrete roadmap.
+      </p>
+      <div class="callout callout--blue">
+        <div class="callout__label">What this challenge tests</div>
+        <p class="callout__text">
+          Experimentation strategy sits at the intersection of product, engineering, analytics, and culture. A strong answer doesn't just describe A/B testing mechanics - it defines <strong>why the platform needs experimentation, what principles it must be built on, and how it scales over time.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Opening Hook -->
+    <section class="cs-section fade-up" aria-labelledby="hook-heading">
+      <div class="cs-section__label">Opening Hook</div>
+      <h2 id="hook-heading">Let's Play a Game</h2>
+      <p>
+        I opened the presentation with a challenge to the audience. Five identical texts - each in a slightly different shade of blue. One question.
+      </p>
+
+      <div class="sdiff-game" aria-label="Spot the difference game">
+        <p class="sdiff-prompt">Spot the difference in these 5 texts</p>
+        <div class="sdiff-cards">
+          <div class="sdiff-card" style="color:#1e40af; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#2563eb; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#1d4ed8; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#3b82f6; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#1a56db; font-weight:600; font-size:1rem;">Click to continue →</div>
+        </div>
+        <button class="sdiff-btn" onclick="this.parentElement.classList.add('revealed')">
+          Reveal the answer
+        </button>
+        <div class="sdiff-insight">
+          <strong>Each text is a different shade of blue.</strong> Did you notice? Most people don't - at least not immediately. And that's the entire point. Google tested <strong>41 shades of blue</strong> for a single toolbar link and found that one specific shade generated an estimated <strong>$200M in additional ad revenue</strong> over the others. The difference between the best and worst shade was invisible to the human eye - but not to data.
+        </div>
+      </div>
+
+      <p style="margin-top: 24px;">This is experimentation in its purest form: surfacing signal that intuition simply cannot detect. The game isn't a gimmick - it's the argument.</p>
+
+      <div class="callout callout--navy">
+        <div class="callout__label">The Google story</div>
+        <p class="callout__text">
+          In 2009, Google ran an experiment testing <strong>41 different shades of blue</strong> for a single toolbar element. The result? One shade outperformed the others by a measurable margin - and that single experiment generated an estimated <strong>$200M in additional ad revenue</strong>. Not from a new product. Not from a new feature. From a colour decision backed by data instead of opinion.
+        </p>
+      </div>
+
+      <p>
+        The hook sets up the core argument: the difference between "we think" and "we know" is worth hundreds of millions of dollars. And it compounds - every product decision made with data rather than gut is a decision made with higher confidence and lower risk.
+      </p>
+    </section>
+
+    <!-- SECTION: The Situation -->
+    <section class="cs-section fade-up" aria-labelledby="situation-heading">
+      <div class="cs-section__label">Context</div>
+      <h2 id="situation-heading">What This Platform Was Facing</h2>
+      <p>
+        To make the strategy concrete, I grounded it in the specific challenges facing a high-scale sports platform. Four forces were creating urgency:
+      </p>
+
+      <div class="situation-grid" aria-label="Business context factors">
+        <div class="situation-card">
+          <div class="situation-card__icon">⚡</div>
+          <div class="situation-card__title">Massive Scale</div>
+          <div class="situation-card__desc">Millions of users across multiple sports, each with different engagement patterns and expectations. At this scale, even small product decisions have outsized impact - positive or negative.</div>
+        </div>
+        <div class="situation-card">
+          <div class="situation-card__icon">🏆</div>
+          <div class="situation-card__title">Competitive Market</div>
+          <div class="situation-card__desc">The sports tech space moves fast. Competitors iterate continuously, and leadership requires a systematic ability to innovate - not just ship features, but ship the <em>right</em> features quickly.</div>
+        </div>
+        <div class="situation-card">
+          <div class="situation-card__icon">🎯</div>
+          <div class="situation-card__title">Critical Decisions</div>
+          <div class="situation-card__desc">Feature decisions directly affect millions of engaged users. A bad rollout isn't just a metric drop - it's churn in a sticky, emotionally invested audience that expects a premium experience.</div>
+        </div>
+        <div class="situation-card">
+          <div class="situation-card__icon">📊</div>
+          <div class="situation-card__title">Limited Data Capability</div>
+          <div class="situation-card__desc">The existing analytics infrastructure couldn't support confident decision-making at speed. Teams were making calls with incomplete data - working hard but not necessarily working right.</div>
+        </div>
+      </div>
+
+      <div class="callout callout--blue">
+        <div class="callout__label">The synthesis</div>
+        <p class="callout__text">
+          Together, these four forces create a clear imperative: move from <strong>"we think"</strong> to <strong>"we know"</strong>. Reduce the risk of shipping the wrong thing. Build products users genuinely love - not products that <em>we think</em> they'll love.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Vision -->
+    <section class="cs-section fade-up" aria-labelledby="vision-heading">
+      <div class="cs-section__label">North Star</div>
+      <h2 id="vision-heading">The Vision</h2>
+      <p>Before the pillars, before the roadmap - a single statement that anchors all the decisions that follow:</p>
+      <div class="callout callout--navy" style="margin-top: 20px;">
+        <div class="callout__label">Experimentation Vision</div>
+        <p class="callout__text" style="font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.6;">
+          "Empowering teams to deliver the best customer experience - with confidence."
+        </p>
+      </div>
+      <p style="margin-top: 20px;">
+        This isn't a mission statement. It's a constraint. Every platform decision - what to build first, what to measure, how to structure the team model - has to pass through this filter. Does it make teams more confident? Does it improve the customer experience? If not, it's a distraction.
+      </p>
+    </section>
+
+    <!-- SECTION: Three Pillars -->
+    <section class="cs-section fade-up" aria-labelledby="pillars-heading">
+      <div class="cs-section__label">Strategy</div>
+      <h2 id="pillars-heading">Three Non-Negotiable Pillars</h2>
+      <p>
+        A good experimentation platform isn't just a technical product. It's a change management challenge. Teams have to trust it enough to run experiments, be curious enough to act on the results, and be confident that what they're measuring is real. The three pillars address each of these.
+      </p>
+
+      <div class="principles-grid" style="margin-top: 28px;">
+        <div class="principle-card">
+          <div class="principle-card__number">Pillar 01</div>
+          <div class="principle-card__title">Simplicity</div>
+          <div class="principle-card__desc">Experiments are easily configured and analysed by anyone on the team - not just analysts. A self-service platform removes the activation energy required to run an experiment, which is the single biggest predictor of whether teams actually run them.</div>
+          <span class="pillar-metric">Measured by: # of experiments conducted</span>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Pillar 02</div>
+          <div class="principle-card__title">Reliability</div>
+          <div class="principle-card__desc">Results should be trustworthy. The end goal is decision-making - and if teams don't trust the output of an experiment, they'll override it with gut feel anyway. Reliable results require robust randomization, correct statistical methodology, and honest confidence intervals.</div>
+          <span class="pillar-metric">Measured by: Validation rate*</span>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">*% of experiments whose results fall within predicted range</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Pillar 03</div>
+          <div class="principle-card__title">Scalability</div>
+          <div class="principle-card__desc">The platform must handle the full customer base without degrading experiment quality. At scale, you need to run many experiments concurrently without cross-contamination, without increasing infrastructure cost linearly, and without slowing down the product team.</div>
+          <span class="pillar-metric">Measured by: # of concurrent experiments possible</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Business Impact -->
+    <section class="cs-section fade-up" aria-labelledby="impact-heading">
+      <div class="cs-section__label">Why It Matters</div>
+      <h2 id="impact-heading">The Business Case for Experimentation</h2>
+      <p>
+        Experimentation isn't a nice-to-have. It's the operating system for making better product decisions faster. Here's how the four core benefits compound over time:
+      </p>
+
+      <div class="impact-blocks" style="margin-top: 28px;">
+        <div class="impact-block">
+          <div class="impact-block__icon">🚀</div>
+          <div class="impact-block__title">Move Fast</div>
+          <div class="impact-block__outcome">→ Faster time to market</div>
+          <div class="impact-block__desc">A validated experiment result is the fastest way to ship with confidence. "Good enough to test" beats "perfect before launch" - every time. The discipline is getting comfortable shipping the experiment, not the finished product.</div>
+        </div>
+        <div class="impact-block">
+          <div class="impact-block__icon">🔁</div>
+          <div class="impact-block__title">Iterate with Purpose</div>
+          <div class="impact-block__outcome">→ More successful features</div>
+          <div class="impact-block__desc">Test, learn, pivot or proceed - then test again. Iteration only has value if it's informed. An experiment that kills a hypothesis early is as valuable as one that confirms it; both save you from building the wrong thing.</div>
+        </div>
+        <div class="impact-block">
+          <div class="impact-block__icon">⚙️</div>
+          <div class="impact-block__title">Resource Efficiency</div>
+          <div class="impact-block__outcome">→ More output, less waste</div>
+          <div class="impact-block__desc">Engineering effort scales only once an idea is validated. Without this gate, teams build features to completion before discovering they don't move the needle - an expensive, demoralising pattern that slows velocity over time.</div>
+        </div>
+        <div class="impact-block">
+          <div class="impact-block__icon">⚠️</div>
+          <div class="impact-block__title">Risk Reduction</div>
+          <div class="impact-block__outcome">→ Cut losses early</div>
+          <div class="impact-block__desc">Experimentation cuts losses early when an idea is off-track. For a platform with millions of users, a bad full rollout isn't just a missed opportunity - it's churn, it's trust erosion, and it's a difficult recovery. An experiment limits exposure to a fraction of traffic.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Roadmap -->
+    <section class="cs-section fade-up" aria-labelledby="roadmap-heading">
+      <div class="cs-section__label">Roadmap</div>
+      <h2 id="roadmap-heading">NOW / NEXT / LATER</h2>
+      <p>
+        The three pillars define what the platform must be. The roadmap defines how to get there - in three phases that build on each other, each delivering value while laying the foundation for the next.
+      </p>
+
+      <div class="roadmap-grid" style="margin-top: 28px;" aria-label="Phased roadmap">
+        <div class="roadmap-col roadmap-col--now">
+          <div class="roadmap-phase">NOW</div>
+          <div class="roadmap-title">Experimentation MVP</div>
+          <ul class="roadmap-list">
+            <li>Basic A/B testing with reliable randomization</li>
+            <li>Dashboard with key experiment metrics monitoring</li>
+            <li>Standardized experiment design templates</li>
+            <li>Integration with existing analytics infrastructure</li>
+            <li>Documentation and team training programs</li>
+          </ul>
+        </div>
+        <div class="roadmap-col roadmap-col--next">
+          <div class="roadmap-phase">NEXT</div>
+          <div class="roadmap-title">Enhanced Capabilities</div>
+          <ul class="roadmap-list">
+            <li>Self-service platform - any team can run experiments</li>
+            <li>Advanced statistical methods for sophisticated testing</li>
+            <li>Real-time monitoring with alerting</li>
+            <li>Basic holdout groups to measure cumulative impact</li>
+            <li>Experiment knowledge base for institutional learning</li>
+          </ul>
+        </div>
+        <div class="roadmap-col roadmap-col--later">
+          <div class="roadmap-phase">LATER</div>
+          <div class="roadmap-title">The Next Gen</div>
+          <ul class="roadmap-list">
+            <li>AI-powered experiment insights and anomaly detection</li>
+            <li>Intelligent experiment planning based on historical data</li>
+            <li>Sophisticated holdout management at scale</li>
+            <li>Automated learning synthesis across the knowledge base</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--green" style="margin-top: 28px;">
+        <div class="callout__label">The sequencing logic</div>
+        <p class="callout__text">
+          Each phase has a specific unlock condition. NOW builds trust - teams need to believe the platform works before they'll adopt it. NEXT removes friction - once trust exists, self-service removes the bottleneck on analysts. LATER adds intelligence - once the platform is running at scale, historical data becomes a strategic asset that AI can leverage. Skipping phases doesn't accelerate the roadmap; it undermines adoption.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Reflections -->
+    <section class="cs-section fade-up" aria-labelledby="reflections-heading">
+      <div class="cs-section__label">Reflections</div>
+      <h2 id="reflections-heading">How I Approached This</h2>
+      <ul>
+        <li><strong>Open with a hook, not a framework.</strong> The "spot the difference" game was a deliberate choice. PMs who open with slides full of 2×2 matrices lose their audience before the first framework lands. A concrete, unexpected experience creates curiosity - and curiosity is what makes the rest of the deck land.</li>
+        <li><strong>Pillars before roadmap.</strong> I deliberately structured the presentation with the three pillars before the NOW/NEXT/LATER roadmap. A roadmap without a strategic anchor is just a feature list. The pillars give the roadmap meaning - every phase decision traces back to one of the three pillars it unlocks or strengthens.</li>
+        <li><strong>Measurement for every pillar.</strong> "Simplicity" and "reliability" are empty words without a way to evaluate them. Attaching a concrete metric to each pillar transforms them from values into commitments - and makes it possible to have an honest conversation about whether you're achieving them.</li>
+        <li><strong>Phase sequencing is as important as phase content.</strong> The hardest part of a platform roadmap isn't knowing what to build - it's knowing why to build it in a particular order. I spent more time on the sequencing logic (trust → adoption → intelligence) than on the individual feature lists within each phase.</li>
+      </ul>
+    </section>
+
+    <!-- Navigation between challenges -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:40px; border-top: 1px solid var(--border); margin-top: 24px;">
+      <a href="interview-challenges.html" class="btn btn--outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Challenges
+      </a>
+      <a href="index.html#work" class="btn btn--primary">
+        View Case Studies
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__logo">Siddhant <span>Mittal</span></span>
+      <div class="footer__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/siddhant-mittal-5813b082/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <span class="footer__copy">© 2026 Siddhant Mittal</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

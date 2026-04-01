@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: Update title and description -->
+  <title>Homogeneous Category Navigation · Siddhant Mittal</title>
+  <meta name="description" content="How I standardised Quick Commerce category navigation across 7 platforms, delivering >10% Category Add-to-Cart and €100M+ incremental GMV.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Homogeneous Category Navigation · Siddhant Mittal">
+  <meta property="og:description" content="How I standardised Quick Commerce category navigation across 7 platforms - >10% Category Add-to-Cart and €100M+ incremental GMV.">
+  <meta property="og:image"       content="IMG_1647.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Homogeneous Category Navigation · Siddhant Mittal">
+  <meta name="twitter:description" content="How I standardised Quick Commerce category navigation across 7 platforms - >10% Category Add-to-Cart and €100M+ incremental GMV.">
+  <meta name="twitter:image"       content="IMG_1647.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="avatar.jpeg" alt="Siddhant Mittal" class="nav__avatar">
+        <span class="nav__logo-name">Siddhant <span>Mittal</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── CASE STUDY HERO ───────────────────────────────────── -->
+  <!-- EDIT: Update title, subtitle, role, dates, and the three metrics -->
+  <header class="cs-hero" role="banner" style="position:relative; overflow:hidden;">
+    <img src="nav_backdrop.png" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; opacity:1; pointer-events:none;">
+    <!-- Dark overlay so text stays readable -->
+    <div aria-hidden="true" style="position:absolute; inset:0; background:rgba(8,60,60,0.55); pointer-events:none; z-index:0;"></div>
+    <div class="cs-hero__inner" style="position:relative; z-index:1;">
+      <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Work
+      </a>
+      <p class="cs-hero__label">Case Study · Delivery Hero · Quick Commerce</p>
+      <h1 class="cs-hero__title">Homogeneous Category Navigation</h1>
+      <p class="cs-hero__subtitle">
+        How I rebuilt the category browsing experience across 7 Quick Commerce platforms - unifying fragmented trees into a standardised framework that scaled to 120,000+ partners globally.
+      </p>
+      <div class="cs-metrics" aria-label="Key outcomes">
+        <div class="cs-metric">
+          <div class="cs-metric__value">>10%</div>
+          <div class="cs-metric__label">Category Add-to-Cart uplift</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">€100M+</div>
+          <div class="cs-metric__label">Incremental GMV contribution</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">120k+</div>
+          <div class="cs-metric__label">Partners scaled globally</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── CASE STUDY BODY ───────────────────────────────────── -->
+  <!-- EDIT: Edit or add sections below. Each section uses class="cs-section" -->
+  <!-- To add a section: copy one <section class="cs-section"> block and change the content -->
+  <main class="cs-body" id="main-content">
+
+    <!-- SECTION: Overview -->
+    <section class="cs-section fade-up" aria-labelledby="overview-heading">
+      <div class="cs-section__label">Overview</div>
+      <h2 id="overview-heading">The Situation</h2>
+      <p>
+        Delivery Hero operates Quick Commerce under multiple brands - Foodpanda, Talabat, PedidosYa, HungerStation, Yemeksepeti, Foodora - serving customers across APAC, MENA, and Europe. Within each brand, customers browse groceries and everyday items through <strong>category navigation</strong>: L1 categories (Beverages, Snacks, Dairy) and their subcategories.
+      </p>
+      <p>
+        The problem: browsing from one shop to another within the same vertical like Groceries was a deeply inconsistent experience. Different stores had wildly different numbers of categories, different naming conventions, different images, and different ranking orders - even for the same products in the same vertical.
+      </p>
+      <figure class="cs-figure fade-up">
+        <img src="case_study_1.png" alt="Example of negative Category Experience - fragmented category structure across shops" class="cs-figure__img">
+        <figcaption class="cs-figure__caption">Real example: two shops in the same city, same vertical - completely different category structures</figcaption>
+      </figure>
+      <div class="callout callout--blue">
+        <div class="callout__label">Key tension</div>
+        <p class="callout__text">
+          <strong>54% of Talabat shopping sessions</strong> start from category browsing (vs. 38.9% via search). Category navigation is the primary discovery surface for most customers - yet the experience was completely fragmented across shops.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Problem -->
+    <section class="cs-section fade-up" aria-labelledby="problem-heading">
+      <div class="cs-section__label">Problem Space</div>
+      <h2 id="problem-heading">What Was Breaking</h2>
+      <p>
+        As a customer in Singapore, switching from one grocery store to another meant relearning the entire category structure. A customer looking for Milo might find it under "Coffee, Tea &amp; Malt" in one Dmart and under "Beverages" in another - a completely different L1 category.
+      </p>
+      <ul>
+        <li><strong>Inconsistent number of L1 categories</strong> - ranging from 9 to 40+ across shops in the same city and vertical</li>
+        <li><strong>Inconsistent naming</strong> - "Vegetables" vs "Veggies", "Snacks &amp; Confectionery" vs "Chips &amp; Snacks"</li>
+        <li><strong>Inconsistent imagery</strong> - no standardised category tile assets</li>
+        <li><strong>Inconsistent ranking</strong> - customers couldn't develop a mental model of where to find things</li>
+        <li><strong>Operational overhead</strong> - hundreds of catalog teams managing bespoke trees per vendor, with no shared tooling</li>
+      </ul>
+      <p>
+        The result was poor product findability, cognitive overload when switching shops, and measurable drop-off in the category-to-cart journey.
+      </p>
+    </section>
+
+    <!-- SECTION: Research & Insight -->
+    <section class="cs-section fade-up" aria-labelledby="research-heading">
+      <div class="cs-section__label">Research &amp; Insight</div>
+      <h2 id="research-heading">What the Data and Benchmarks Told Us</h2>
+      <p>
+        Before designing a solution, I grounded the work in two evidence sources: competitive benchmarking and internal UX research from PeYa (PedidosYa) teams.
+      </p>
+      <h4 style="margin: 20px 0 12px; color: var(--navy);">Competitive Benchmarking</h4>
+      <p>Leading Quick Commerce players globally keep category counts tightly constrained - even with very large assortments:</p>
+      <div class="benchmark-row">
+        <div class="benchmark-item">
+          <div class="benchmark-item__brand">Swiggy Instamart</div>
+          <div class="benchmark-item__number">24</div>
+          <div class="benchmark-item__label">L1 categories</div>
+        </div>
+        <div class="benchmark-item">
+          <div class="benchmark-item__brand">Getir</div>
+          <div class="benchmark-item__number">20</div>
+          <div class="benchmark-item__label">L1 categories</div>
+        </div>
+        <div class="benchmark-item">
+          <div class="benchmark-item__brand">Gopuff</div>
+          <div class="benchmark-item__number">15</div>
+          <div class="benchmark-item__label">L1 categories</div>
+        </div>
+        <div class="benchmark-item">
+          <div class="benchmark-item__brand">Top Supermarkets<br>(15k+ SKUs)</div>
+          <div class="benchmark-item__number">9–15</div>
+          <div class="benchmark-item__label">L1 categories</div>
+        </div>
+      </div>
+      <figure class="cs-figure fade-up">
+        <img src="benchmark_phones.png" alt="Competitive benchmark: Swiggy 24 categories, Getir 20, Gopuff 15" class="cs-figure__img">
+        <figcaption class="cs-figure__caption">Competitive benchmark: leading Quick Commerce players keep L1 categories tightly constrained despite large assortments</figcaption>
+      </figure>
+      <div class="callout callout--navy">
+        <div class="callout__label">Key insight</div>
+        <p class="callout__text">
+          Our Dmarts had <strong>32+ categories</strong> with only 3.5k SKUs - more than any major supermarket chain with 15k+ SKUs. We were creating cognitive overload for our customers and operational complexity for our teams.
+        </p>
+      </div>
+      <h4 style="margin: 24px 0 12px; color: var(--navy);">Internal Data: ABS and Subcategory Count</h4>
+      <p>
+        Internal analytics confirmed the relationship between subcategory count and Add-to-Basket Score (ABS). DMarts with 6–8 subcategories per L1 category consistently outperformed those with more or fewer. Too many subcategories diluted assortment density; too few reduced findability.
+      </p>
+    </section>
+
+    <!-- SECTION: Solution Framework -->
+    <section class="cs-section fade-up" aria-labelledby="solution-heading">
+      <div class="cs-section__label">Solution</div>
+      <h2 id="solution-heading">Homogeneous Navigation Framework</h2>
+      <p>
+        I introduced the concept of <strong>Homogeneous Navigation</strong> - a vertical-level category tree template that applies consistently across all shops within a country × vertical segment (e.g., all grocery stores in Singapore share the same tree structure).
+      </p>
+      <p>
+        The framework was built on five non-negotiable principles:
+      </p>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-card__number">Principle 01</div>
+          <div class="principle-card__title">Assortment Breadth</div>
+          <div class="principle-card__desc">Limit L1 native categories to 17–25 per vertical. Mirrors industry best practice even for large assortments.</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Principle 02</div>
+          <div class="principle-card__title">Assortment Depth</div>
+          <div class="principle-card__desc">6–8 subcategories per L1, stretching to max 12. Minimum 20 SKUs per subcategory to ensure perceived depth.</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Principle 03</div>
+          <div class="principle-card__title">Vertical Consistency</div>
+          <div class="principle-card__desc">No separate trees within a vertical. Flexibility allowed only in non-native (promotional) categories, never in core taxonomy.</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Principle 04</div>
+          <div class="principle-card__title">L1 Creation Guardrails</div>
+          <div class="principle-card__desc">New L1 categories only when introducing a genuinely new product vertical (e.g. Fashion, Electronics). Never for assortment expansion alone.</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Principle 05</div>
+          <div class="principle-card__title">Ranking Consistency</div>
+          <div class="principle-card__desc">Category ranking is standardised across the vertical. Customers develop a mental model that transfers between shops.</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-card__number">Design goal</div>
+          <div class="principle-card__title">Country-level Management</div>
+          <div class="principle-card__desc">Trees managed at country level - one team, one tree per vertical, consistent across all vendors. Streamlines catalog operations significantly.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Execution -->
+    <section class="cs-section fade-up" aria-labelledby="execution-heading">
+      <div class="cs-section__label">Execution</div>
+      <h2 id="execution-heading">Controlled Experiments → Global Rollout</h2>
+      <p>
+        I ran a phased experiment strategy - validating the framework in one region before scaling to the next. This allowed us to catch region-specific issues early and build an evidence base for the global rollout case.
+      </p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-step__number">1</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">APAC Pilot (Singapore, Malaysia, Hong Kong, Taiwan)</div>
+            <div class="flow-step__desc">First controlled experiment with standardised trees. Compared session-matched cohorts across shops with standard vs non-standard trees. Established baseline Category ATC improvement signal.</div>
+            <div class="flow-step__figures">
+              <figure class="cs-figure cs-figure--inline">
+                <img src="foodpanda_sg.png" alt="Foodpanda SG: +5% ATC" class="cs-figure__img">
+              </figure>
+              <figure class="cs-figure cs-figure--inline">
+                <img src="foodpanda_my.png" alt="Foodpanda MY: +5.5% ATC, +16% ABV" class="cs-figure__img">
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">2</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">MENA Expansion (UAE, Saudi Arabia, Kuwait)</div>
+            <div class="flow-step__desc">Adapted the framework for right-to-left UI contexts and culturally relevant category naming. Validated that +ATC signal persisted across different consumer bases.</div>
+            <figure class="cs-figure cs-figure--inline">
+              <img src="mena_talabat.png" alt="MENA Talabat rollout results" class="cs-figure__img">
+            </figure>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">3</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Europe Rollout (PeYa, Yemek, Foodora)</div>
+            <div class="flow-step__desc">Coordinated with 3 regional brand teams and their catalog operations. Framework applied with brand-specific localisation while preserving core tree structure.</div>
+            <figure class="cs-figure cs-figure--inline">
+              <img src="europe.png" alt="Europe rollout results" class="cs-figure__img">
+            </figure>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">4</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Global Scale - 120k+ Partners, 7 Platforms</div>
+            <div class="flow-step__desc">Published the Category Playbook as a global standard. Embedded the framework into vendor onboarding and catalog tooling so new partners inherit the standardised tree automatically.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Results -->
+    <section class="cs-section fade-up" aria-labelledby="results-heading">
+      <div class="cs-section__label">Results</div>
+      <h2 id="results-heading">Impact</h2>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-item__value">>10%</div>
+          <div class="impact-item__label">Category Add-to-Cart rate uplift</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">€100M+</div>
+          <div class="impact-item__label">Incremental GMV</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">120k+</div>
+          <div class="impact-item__label">Partners on standardised trees</div>
+        </div>
+      </div>
+      <p style="margin-top: 24px;">
+        Beyond the headline numbers, the framework delivered compounding operational benefits: catalog teams reduced the time spent managing bespoke trees, new vendor onboarding became faster and more consistent, and the global reporting infrastructure became simpler to maintain with standardised category structures.
+      </p>
+      <div class="callout callout--green">
+        <div class="callout__label">Signal worth noting</div>
+        <p class="callout__text">
+          Yemeksepeti (Turkey) had already implemented a version of this pattern natively - and their shops showed the strongest ABS metrics in the network. This became our strongest internal validation that homogeneous experience works at scale.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: Learnings -->
+    <section class="cs-section fade-up" aria-labelledby="learnings-heading">
+      <div class="cs-section__label">Reflections</div>
+      <h2 id="learnings-heading">What I Learned</h2>
+      <ul>
+        <li><strong>Standardisation is a harder sell than it sounds.</strong> Key accounts pushed back on losing their custom trees. Building the evidence base first - competitive benchmarks, internal ABS data, the PeYa UX research - was what made the persuasion possible.</li>
+        <li><strong>Flexibility lives in non-native categories.</strong> The key insight was allowing promotional/non-native category flexibility while holding the core taxonomy rigid. This gave commercial teams what they needed without compromising the customer experience.</li>
+        <li><strong>Operational impact compounds.</strong> The biggest surprise was how much catalog team efficiency improved. Fewer custom trees meant fewer edge cases, faster onboarding, and cleaner data pipelines downstream.</li>
+        <li><strong>Ranking matters as much as structure.</strong> We initially underestimated how much category ranking affected ATC. A consistent structure with inconsistent ranking still created confusion. Locking ranking in the framework was a later addition that proved critical.</li>
+      </ul>
+    </section>
+
+    <!-- Navigation between case studies -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:40px; border-top: 1px solid var(--border); margin-top: 24px;">
+      <a href="index.html" class="btn btn--outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Work
+      </a>
+      <a href="case-study-2.html" class="btn btn--primary">
+        Next Case Study
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__logo">Siddhant <span>Mittal</span></span>
+      <div class="footer__links">
+        <a href="index.html#work">Work</a>
+        <a href="interview-challenges.html">Challenges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/siddhant-mittal-5813b082/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <span class="footer__copy">© 2026 Siddhant Mittal</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
