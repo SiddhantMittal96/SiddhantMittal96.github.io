@@ -39,6 +39,15 @@
       .cs3-text-col { max-width: 100%; }
       .cs3-screens  { display: none; }
     }
+    .lovable-thumb { cursor: zoom-in; transition: opacity 0.15s; }
+    .lovable-thumb:hover { opacity: 0.85; }
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.88); z-index: 9999;
+      align-items: center; justify-content: center; cursor: zoom-out;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img { max-width: 92vw; max-height: 92vh; border-radius: 10px; box-shadow: 0 8px 48px rgba(0,0,0,0.6); }
   </style>
 </head>
 <body>
@@ -292,14 +301,19 @@
       </p>
 
       <!-- Lovable prototype screenshots -->
-      <div class="fade-up" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0;">
-        <img src="FC_Lovable1.png" alt="Lovable prototype — screen 1" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
-        <img src="FC_Lovable_2.png" alt="Lovable prototype — screen 2" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
-        <img src="FC_Lovable_3.png" alt="Lovable prototype — screen 3" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
-        <img src="FC_Lovable_4.png" alt="Lovable prototype — screen 4" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
-        <img src="FC_Lovable_5.png" alt="Lovable prototype — screen 5" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+      <div class="fade-up" style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 24px 0;">
+        <img src="FC_Lovable1.png"  alt="Lovable prototype — screen 1" class="lovable-thumb" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+        <img src="FC_Lovable_2.png" alt="Lovable prototype — screen 2" class="lovable-thumb" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+        <img src="FC_Lovable_3.png" alt="Lovable prototype — screen 3" class="lovable-thumb" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+        <img src="FC_Lovable_4.png" alt="Lovable prototype — screen 4" class="lovable-thumb" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+        <img src="FC_Lovable_5.png" alt="Lovable prototype — screen 5" class="lovable-thumb" style="width:100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow-card); grid-column: 1 / -1; max-width: 50%; justify-self: center;">
       </div>
-      <p class="cs-figure__caption" style="text-align:center; margin-bottom: 24px;">Lovable prototype screens — AI-powered Featured Category curation, built to communicate the vision and drive stakeholder alignment before engineering commitment.</p>
+      <p class="cs-figure__caption" style="text-align:center; margin-bottom: 24px;">Lovable prototype screens — click to expand. AI-powered Featured Category curation, built to communicate the vision and drive stakeholder alignment before engineering commitment.</p>
+
+      <!-- Lightbox -->
+      <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <img id="lightbox-img" src="" alt="Expanded prototype screenshot">
+      </div>
 
       <figure class="cs-figure fade-up">
         <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1px solid #a7f3d0; border-radius: 12px; padding: 32px; text-align: center;">
@@ -370,5 +384,18 @@
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.lovable-thumb').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+  </script>
 </body>
 </html>
