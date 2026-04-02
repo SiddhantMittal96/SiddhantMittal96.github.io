@@ -1333,6 +1333,10 @@ p  { color: var(--text-muted); line-height: 1.75; }
   font-weight: 500;
   color: var(--navy);
   text-align: center;
+  cursor: pointer;
+}
+.sdiff-card--clicked {
+  opacity: 0.45;
   cursor: default;
 }
 .sdiff-btn {
