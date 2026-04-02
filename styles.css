@@ -577,9 +577,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
 .about-teaser__photo {
   width: 100%;
   max-width: 380px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 }
