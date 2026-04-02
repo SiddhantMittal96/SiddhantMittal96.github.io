@@ -167,7 +167,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
   display: flex;
   align-items: center;
   padding-top: var(--nav-h);
-  background: linear-gradient(160deg, var(--white) 0%, var(--blue-pale) 100%);
+  background: #f4f4f0;
   position: relative;
   overflow: hidden;
 }
@@ -933,7 +933,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
 
 /* ── ABOUT PAGE ─────────────────────────────────────────────── */
 .about-hero {
-  background: linear-gradient(160deg, var(--white) 0%, var(--blue-pale) 100%);
+  background: #f4f4f0;
   padding: calc(var(--nav-h) + 64px) 0 72px;
 }
 .about-hero__inner {
@@ -1115,7 +1115,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(160deg, var(--white) 0%, var(--blue-pale) 100%);
+  background: #f4f4f0;
   padding-top: var(--nav-h);
 }
 .contact-inner {
