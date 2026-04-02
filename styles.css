@@ -1570,3 +1570,27 @@ p  { color: var(--text-muted); line-height: 1.75; }
   .hero__photo-wrap { display: none; }
   .hero__title { font-size: clamp(2rem, 8vw, 2.8rem); }
 }
+
+/* ── LIGHTBOX ───────────────────────────────────────────────── */
+.cs-figure__img, .lovable-thumb {
+  cursor: zoom-in;
+  transition: opacity 0.15s;
+}
+.cs-figure__img:hover, .lovable-thumb:hover { opacity: 0.85; }
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+}

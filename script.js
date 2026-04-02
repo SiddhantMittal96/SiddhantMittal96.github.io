@@ -122,6 +122,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── LIGHTBOX ───────────────────────────────────────────────
+  // Applies to all .cs-figure__img and .lovable-thumb images.
+  // Injects the overlay once, then reuses it for every click.
+  const lightboxImgs = document.querySelectorAll('.cs-figure__img, .lovable-thumb');
+  if (lightboxImgs.length) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Image preview');
+    const lbImg = document.createElement('img');
+    lbImg.alt = '';
+    overlay.appendChild(lbImg);
+    document.body.appendChild(overlay);
+
+    const closeLightbox = () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    lightboxImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    overlay.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  }
+
   // ── INTERVIEW CHALLENGES EMPTY STATE ──────────────────────
   // Handled by card renderer above — if no items match
   // type="interview-challenge", renderEmpty() is shown.
