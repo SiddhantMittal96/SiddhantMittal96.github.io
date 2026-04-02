@@ -10,7 +10,7 @@
   --blue-light:  #60a5fa;
   --blue-pale:   #eff6ff;
   --teal:        #0d9488;
-  --bg:          #f8fafc;
+  --bg:          #f4f4f0;
   --white:       #ffffff;
   --text:        #111827;
   --text-muted:  #4b5563;   /* was #64748b — now passes AA at all sizes */
@@ -55,7 +55,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
 /* ── LAYOUT ─────────────────────────────────────────────────── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .section    { padding: 88px 0; }
-.section--alt { background: var(--white); }
+.section--alt { background: #fafaf8; }
 .section-label {
   display: inline-block;
   font-size: 0.75rem;
@@ -127,6 +127,14 @@ p  { color: var(--text-muted); line-height: 1.75; }
 }
 .nav__links a:hover { color: var(--navy); background: var(--blue-pale); }
 .nav__links a.active { color: var(--blue); }
+.nav__linkedin {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.nav__linkedin:hover { color: var(--navy); }
+.nav__linkedin svg { width: 18px; height: 18px; }
 .nav__cta {
   padding: 9px 20px;
   background: var(--navy);
@@ -320,6 +328,22 @@ p  { color: var(--text-muted); line-height: 1.75; }
 }
 .hero__photo-badge-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
 .hero__photo-badge-value { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+.hero__scroll-hint:hover { opacity: 0.9; }
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(7px); }
+}
 
 /* ── HIGHLIGHTS STRIP ───────────────────────────────────────── */
 .highlights {
