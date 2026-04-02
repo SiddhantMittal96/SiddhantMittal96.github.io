@@ -73,7 +73,7 @@ const CASE_STUDIES = [
     file: "interview-challenge-1.html",
     color: "#E1261C",
     image: "exp_backdrop.svg",
-    featured: false,
+    featured: true,
     status: "published"
   },
 ];

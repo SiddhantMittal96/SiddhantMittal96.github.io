@@ -188,7 +188,7 @@ function renderCard(cs) {
   const imgStyle  = hasImage ? `background-image:url('${cs.image}'); background-size:cover; background-position:center;` : '';
 
   return `
-    <article class="card${isComingSoon ? ' card--coming-soon' : ''}" style="--card-color:${cs.color || 'var(--navy)'}">
+    <article class="card card--${cs.type}${isComingSoon ? ' card--coming-soon' : ''}" style="--card-color:${cs.color || 'var(--navy)'}">
       <div class="card__header${hasImage ? ' card__header--img' : ''}" style="${imgStyle}">
         <div class="card__header-bg"></div>
         <div class="card__header-pattern"></div>

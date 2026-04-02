@@ -496,6 +496,11 @@ p  { color: var(--text-muted); line-height: 1.75; }
 .card__link svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 /* Coming soon card */
+.card--interview-challenge .card__header-type {
+  background: rgba(225,38,28,0.25);
+  border-color: rgba(225,38,28,0.5);
+  color: #fff;
+}
 .card--coming-soon { opacity: 0.6; pointer-events: none; }
 .coming-soon-badge {
   display: inline-block;
