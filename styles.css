@@ -54,7 +54,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
 
 /* ── LAYOUT ─────────────────────────────────────────────────── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-.section    { padding: 64px 0; }
+.section    { padding: 56px 0; }
 .section--alt { background: #fafaf8; }
 .section-label {
   display: inline-block;
