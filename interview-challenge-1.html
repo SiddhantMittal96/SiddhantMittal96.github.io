@@ -165,24 +165,16 @@
 
       <div class="sdiff-game" aria-label="Spot the difference game">
         <p class="sdiff-prompt">Spot the difference in these 5 texts</p>
-        <div class="sdiff-cards" id="sdiff-cards">
-          <div class="sdiff-card" style="color:#1e40af; font-weight:600; font-size:1rem;" onclick="sdiffClick(this)">Click to continue →</div>
-          <div class="sdiff-card" style="color:#2563eb; font-weight:600; font-size:1rem;" onclick="sdiffClick(this)">Click to continue →</div>
-          <div class="sdiff-card" style="color:#1d4ed8; font-weight:600; font-size:1rem;" onclick="sdiffClick(this)">Click to continue →</div>
-          <div class="sdiff-card" style="color:#3b82f6; font-weight:600; font-size:1rem;" onclick="sdiffClick(this)">Click to continue →</div>
-          <div class="sdiff-card" style="color:#1a56db; font-weight:600; font-size:1rem;" onclick="sdiffClick(this)">Click to continue →</div>
+        <div class="sdiff-cards">
+          <div class="sdiff-card" style="color:#1e40af; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#2563eb; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#1d4ed8; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#3b82f6; font-weight:600; font-size:1rem;">Click to continue →</div>
+          <div class="sdiff-card" style="color:#1a56db; font-weight:600; font-size:1rem;">Click to continue →</div>
         </div>
-        <button class="sdiff-btn" id="sdiff-reveal-btn" style="display:none;" onclick="this.parentElement.classList.add('revealed')">
+        <button class="sdiff-btn" onclick="this.parentElement.classList.add('revealed')">
           Reveal the answer
         </button>
-        <script>
-          function sdiffClick(card) {
-            card.classList.add('sdiff-card--clicked');
-            var cards = document.querySelectorAll('#sdiff-cards .sdiff-card');
-            var allClicked = Array.from(cards).every(function(c) { return c.classList.contains('sdiff-card--clicked'); });
-            if (allClicked) document.getElementById('sdiff-reveal-btn').style.display = '';
-          }
-        </script>
         <div class="sdiff-insight">
           <strong>Each text is a different shade of blue.</strong> Did you notice? Most people don't - at least not immediately. And that's the entire point. Google tested <strong>41 shades of blue</strong> for a single toolbar link and found that one specific shade generated an estimated <strong>$200M in additional ad revenue</strong> over the others. The difference between the best and worst shade was invisible to the human eye - but not to data.
         </div>
