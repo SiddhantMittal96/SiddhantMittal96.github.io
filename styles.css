@@ -54,7 +54,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
 
 /* ── LAYOUT ─────────────────────────────────────────────────── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-.section    { padding: 56px 0; }
+.section    { padding: 48px 0; }
 .section--alt { background: #fafaf8; }
 .section-label {
   display: inline-block;
@@ -386,7 +386,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   gap: 32px;
-  margin-top: 56px;
+  margin-top: 32px;
 }
 .card {
   background: var(--white);
