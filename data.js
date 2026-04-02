@@ -70,7 +70,7 @@ const CASE_STUDIES = [
     tags: ["Consumer Experience", "A/B Testing", "Quick Commerce", "Experimentation"],
     file: "case-study-3.html",
     color: "#065f46",
-    image: "fc_backdrop.svg",
+    image: "featuredcat.png",
     featured: true,
     status: "published"
   },
