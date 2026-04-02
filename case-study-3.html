@@ -32,6 +32,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .cs3-text-col { max-width: 44%; }
+    @media (max-width: 768px) {
+      .cs3-text-col { max-width: 100%; }
+      .hero-phone  { display: none !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -54,33 +61,33 @@
 
   <!-- ── CASE STUDY HERO ───────────────────────────────────── -->
   <header class="cs-hero" role="banner" style="background: linear-gradient(160deg, #2d1208 0%, #6f3e2f 100%); position: relative; overflow: hidden;">
-    <!-- Two phones side by side -->
-    <div aria-hidden="true" style="position:absolute; top:50%; right:0; transform:translateY(-50%); display:flex; align-items:center; gap:1.5vw; padding-right:2vw; pointer-events:none;">
-      <img src="phone_hero.png" style="width:20vw; height:auto;">
-      <img src="fc_second.png"  style="width:20vw; height:auto;">
-    </div>
+    <!-- fc_second on left (right:26vw), phone_hero on right (right:1vw) — each 24vw wide -->
+    <img src="fc_second.png"  class="hero-phone" aria-hidden="true" style="position:absolute; top:50%; right:26vw; transform:translateY(-50%); width:24vw; height:auto; pointer-events:none;">
+    <img src="phone_hero.png" class="hero-phone" aria-hidden="true" style="position:absolute; top:50%; right:1vw;  transform:translateY(-50%); width:24vw; height:auto; pointer-events:none;">
     <div class="cs-hero__inner" style="position:relative; z-index:1;">
-      <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to Work
-      </a>
-      <p class="cs-hero__label">Case Study · Delivery Hero · Consumer Discovery</p>
-      <h1 class="cs-hero__title">Featured Categories</h1>
-      <p class="cs-hero__subtitle">
-        Quick Commerce navigation is built for the customer who knows what they want. Featured Categories is for everyone else — surfacing trending products, new arrivals, and seasonal picks automatically, without any manual curation overhead. Built 0→1 on HungerStation and validated through two rounds of A/B experimentation.
-      </p>
-      <div class="cs-metrics" aria-label="Key outcomes" style="border-top:none; padding-top:0;">
-        <div class="cs-metric">
-          <div class="cs-metric__value">€650K</div>
-          <div class="cs-metric__label">Annualised GMV · HungerStation</div>
-        </div>
-        <div class="cs-metric">
-          <div class="cs-metric__value">3.29%</div>
-          <div class="cs-metric__label">Featured Category CTR</div>
-        </div>
-        <div class="cs-metric">
-          <div class="cs-metric__value">7</div>
-          <div class="cs-metric__label">Platforms · Scale opportunity</div>
+      <div class="cs3-text-col">
+        <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Work
+        </a>
+        <p class="cs-hero__label">Case Study · Delivery Hero · Consumer Discovery</p>
+        <h1 class="cs-hero__title">Featured Categories</h1>
+        <p class="cs-hero__subtitle">
+          Quick Commerce navigation is built for the customer who knows what they want. Featured Categories is for everyone else — surfacing trending products, new arrivals, and seasonal picks automatically, without any manual curation overhead. Built 0→1 on HungerStation and validated through two rounds of A/B experimentation.
+        </p>
+        <div class="cs-metrics" aria-label="Key outcomes" style="border-top:none; padding-top:0;">
+          <div class="cs-metric">
+            <div class="cs-metric__value">€650K</div>
+            <div class="cs-metric__label">Annualised GMV · HungerStation</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric__value">3.29%</div>
+            <div class="cs-metric__label">Featured Category CTR</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric__value">7</div>
+            <div class="cs-metric__label">Platforms · Scale opportunity</div>
+          </div>
         </div>
       </div>
     </div>
