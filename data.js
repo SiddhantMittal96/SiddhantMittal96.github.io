@@ -69,7 +69,7 @@ const CASE_STUDIES = [
     metrics: ["€650K GMV", "3.29% FC CTR", "7 Platforms"],
     tags: ["Consumer Experience", "A/B Testing", "Quick Commerce", "Experimentation"],
     file: "case-study-3.html",
-    color: "#065f46",
+    color: "#6f3e2f",
     image: "featuredcat.png",
     featured: true,
     status: "published"
