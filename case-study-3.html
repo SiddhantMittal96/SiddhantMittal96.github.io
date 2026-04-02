@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3C8EJWRNL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3C8EJWRNL');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Categories · Siddhant Mittal</title>
+  <meta name="description" content="How I designed and shipped Featured Categories — automated, contextual product collections that surface trending and new products on Quick Commerce platforms — and what two rounds of experimentation taught me about shipping new discovery features.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Featured Categories · Siddhant Mittal">
+  <meta property="og:description" content="Designing automated contextual product collections for Quick Commerce — from concept to A/B experiment, two iterations, and €650K GMV on HungerStation.">
+  <meta property="og:image"       content="IMG_1647.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Featured Categories · Siddhant Mittal">
+  <meta name="twitter:description" content="Designing automated contextual product collections for Quick Commerce — from concept to A/B experiment, two iterations, and €650K GMV on HungerStation.">
+  <meta name="twitter:image"       content="IMG_1647.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-name">Siddhant <span>Mittal</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── CASE STUDY HERO ───────────────────────────────────── -->
+  <header class="cs-hero" role="banner" style="background: linear-gradient(160deg, #064e3b 0%, #047857 100%); position: relative; overflow: hidden;">
+    <img src="fc_backdrop.svg" aria-hidden="true" style="position:absolute; top:50%; right:-2%; transform:translateY(-50%); width:58%; height:auto; opacity:0.75; pointer-events:none;">
+    <div class="cs-hero__inner" style="position:relative; z-index:1;">
+      <a href="index.html" class="cs-hero__back" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Work
+      </a>
+      <p class="cs-hero__label">Case Study · Delivery Hero · Consumer Discovery</p>
+      <h1 class="cs-hero__title">Featured Categories</h1>
+      <p class="cs-hero__subtitle">
+        Quick Commerce navigation is built for the customer who knows what they want. Featured Categories is for everyone else — surfacing trending products, new arrivals, and seasonal picks automatically, without any manual curation overhead. Built 0→1 on HungerStation and validated through two rounds of A/B experimentation.
+      </p>
+      <div class="cs-metrics" aria-label="Key outcomes">
+        <div class="cs-metric">
+          <div class="cs-metric__value">€650K</div>
+          <div class="cs-metric__label">Annualised GMV · HungerStation</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">3.29%</div>
+          <div class="cs-metric__label">Featured Category CTR</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__value">7</div>
+          <div class="cs-metric__label">Platforms · Scale opportunity</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── CASE STUDY BODY ───────────────────────────────────── -->
+  <main class="cs-body" id="main-content">
+
+    <!-- SECTION: The Problem -->
+    <section class="cs-section fade-up" aria-labelledby="problem-heading">
+      <div class="cs-section__label">Overview</div>
+      <h2 id="problem-heading">The Problem Worth Solving</h2>
+      <p>
+        Quick Commerce category navigation — Beverages, Dairy, Snacks, Fresh Produce — is optimised for the customer with intent. They open the app knowing they want oat milk, navigate to Dairy &amp; Alternatives, and find it. The path is direct. This model works well for a significant share of sessions.
+      </p>
+      <p>
+        But a large share of sessions don't start with intent. A customer opens a local shop, browses without a specific goal, and either converts on something that catches their eye or exits. In these sessions, standard navigation is largely passive: it waits to be used rather than surfacing anything useful to the browsing customer.
+      </p>
+      <p>
+        The gap: there was no automated mechanism to surface contextual signals — what's trending at this partner right now, what just arrived this week, what seasonal moment we're in. Catalog Managers could create curated collections manually, but this didn't scale. Manual curation meant inconsistency across partners, slow response to trends, and significant operational overhead on a team already stretched across 75+ countries.
+      </p>
+      <div class="callout callout--blue">
+        <div class="callout__label">The discovery opportunity</div>
+        <p class="callout__text">
+          Category browsing accounts for <strong>over 50% of shopping sessions</strong> in Quick Commerce. Making that first screen more contextual — surfacing something relevant the customer wasn't looking for — is one of the highest-leverage surfaces for driving incremental add-to-cart and basket size.
+        </p>
+      </div>
+      <p>
+        The question I started with: can we make the product surface feel alive and contextual — automatically, at partner scale — without putting any additional burden on the catalog team?
+      </p>
+    </section>
+
+    <!-- SECTION: The Solution -->
+    <section class="cs-section fade-up" aria-labelledby="solution-heading">
+      <div class="cs-section__label">The Solution</div>
+      <h2 id="solution-heading">What Featured Categories Are</h2>
+      <p>
+        Featured Categories sit above the standard category rail on a partner's shop page — a dedicated row visible when the customer first opens a local shop. Unlike standard categories (which are static and manually maintained), FCs are populated automatically using data-driven rules, with no per-partner manual curation required.
+      </p>
+      <p>
+        I defined two types, designed to cover different discovery moments:
+      </p>
+
+      <div class="callout callout--navy" style="margin-bottom: 20px;">
+        <div class="callout__label">Rule-Based Featured Categories (automated)</div>
+        <p class="callout__text">
+          Populated automatically from product and sales data:
+          <br><br>
+          <strong>Trendy</strong> — Products ranked by sales velocity over the last 30 days. What customers at this specific partner are actually buying right now.<br><br>
+          <strong>New Arrivals</strong> — Products added to the partner's catalog in the last 30 days. Fresh stock surfaced automatically the moment it's listed.<br><br>
+          <strong>Back in Stock</strong> — Previously unavailable products now available again. Useful for recurring purchases and products with variable supply.
+        </p>
+      </div>
+
+      <div class="callout callout--blue">
+        <div class="callout__label">Occasion-Based Featured Categories (contextual)</div>
+        <p class="callout__text">
+          Pre-curated product collections activated on a schedule, tied to cultural or seasonal moments: <strong>Ramadan, Easter, Back to School, Summer Essentials</strong>. Visible across relevant partners in the relevant market during the relevant window — without any Catalog Manager touching a partner-by-partner configuration.
+        </p>
+      </div>
+
+      <p>
+        The architecture was deliberately simple: data pipelines populate each FC based on its rule. A Catalog Manager or market team configures which FCs to activate; the system handles partner-level population from there. No per-partner manual curation, no ops overhead.
+      </p>
+    </section>
+
+    <!-- SECTION: The Experiment — Setup -->
+    <section class="cs-section fade-up" aria-labelledby="experiment-heading">
+      <div class="cs-section__label">Experimentation</div>
+      <h2 id="experiment-heading">The Experiment: HungerStation, Saudi Arabia</h2>
+      <p>
+        We ran the validation experiment on <strong>HungerStation</strong> — one of the strongest Quick Commerce markets in the MENA region. The setup was a standard A/B test: Control (standard category navigation as-is) vs Variation (two Featured Categories — New Arrivals and Trendy — surfaced above the standard rail on the shop page for all Local Shop partners).
+      </p>
+      <p>
+        The visual change was deliberate and visible: in the Variation, customers landing on a Local Shop saw the FCs as the first scrollable content element above the DEAL ZONE and standard "Shop by Category" rail. The hypothesis was that the contextual positioning would increase category engagement and add-to-cart upstream of the standard navigation.
+      </p>
+      <p>
+        We ran the experiment in two iterations. The first iteration surfaced five issues that invalidated the initial signal before we could draw any conclusions. The second, after fixing each issue, gave us a clean read.
+      </p>
+    </section>
+
+    <!-- SECTION: Iteration 1 -->
+    <section class="cs-section fade-up" aria-labelledby="iteration1-heading">
+      <div class="cs-section__label">Iteration 1 · Dec 4–19, 2025</div>
+      <h2 id="iteration1-heading">Finding What Was Broken</h2>
+      <p>
+        The first experiment ran for two weeks on HungerStation. As part of ongoing monitoring, I did manual spot-checks across partner pages — and found issues quickly. Rather than wait for end-of-experiment results, we stopped the experiment early, diagnosed each issue, and fixed them before relaunching.
+      </p>
+      <p>
+        Five issues were identified:
+      </p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-step__number">1</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Missing FCs on some partners</div>
+            <div class="flow-step__desc">Trendy wasn't showing consistently. For the partner Trolley, New Arrivals appeared but Trendy was absent entirely. A data pipeline issue meant the FC was simply not being populated for a subset of partners.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">2</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Too few products per FC</div>
+            <div class="flow-step__desc">On key partners like Al-Othaim, the Trendy FC showed as few as <strong>one product</strong>. A category with one product isn't a category — it's a broken experience. The issue: the source data for top sellers was using ad-hoc queries with insufficient product coverage.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">3</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Tracking contamination in Eppo</div>
+            <div class="flow-step__desc">Our experiment platform reported FC metrics for the Control group — users who had no access to the feature. This meant the experiment data was contaminated and any metric movement would be uninterpretable until fixed.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">4</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">New Arrivals coverage gap</div>
+            <div class="flow-step__desc">The New Arrivals logic used a 14-day window. In practice, a large share of Local Shop partners had zero new products in that window — so the FC simply didn't appear for them at all. The feature was invisible to most of the experiment's intended surface.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">5</div>
+          <div class="flow-step__content">
+            <div class="flow-step__title">Random subcategory ranking inside FCs</div>
+            <div class="flow-step__desc">Once a customer clicked into a FC, they saw subcategories in arbitrary order — Ice Cream, then Beauty &amp; Personal Care, then Sauces. The least popular items surfaced first. The experience inside the FC undermined whatever interest the FC had generated.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--blue" style="margin-top: 32px;">
+        <div class="callout__label">Why we stopped instead of reading the result</div>
+        <p class="callout__text">
+          A broken experiment doesn't produce a neutral result — it produces <em>noise</em>. With tracking contamination affecting the control group and key partners showing missing or near-empty FCs, any metric movement would be uninterpretable. The right call was to stop, fix the foundation, and relaunch cleanly.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: The Fixes -->
+    <section class="cs-section fade-up" aria-labelledby="fixes-heading">
+      <div class="cs-section__label">Between Iterations</div>
+      <h2 id="fixes-heading">Fixing the Foundation</h2>
+      <p>
+        Each of the five issues was assigned an owner and resolved before the relaunch. The key fixes:
+      </p>
+      <ul>
+        <li><strong>Data infrastructure.</strong> The Category Management team created a separate curated table for Top Sellers — a reliable, clean data source replacing the ad-hoc query that had caused sparse product counts. This also ensured consistent FC availability across all Local Shop partners.</li>
+        <li><strong>Tracking verified and confirmed clean.</strong> The experiment was enabled for the internal team first; events were confirmed firing and captured correctly in Perseus. A traffic split analysis showed no contamination from the traffic allocation perspective.</li>
+        <li><strong>New Arrivals window extended to 30 days.</strong> Analysis showed that the 30-day window brought New Arrivals coverage across the vast majority of partners. We also enabled both FCs for all Local Shops, removing the conditional logic that had left some partners excluded.</li>
+        <li><strong>Subcategory ranking aligned to L1 ranking.</strong> Inside each FC, subcategories are now ranked the same way as top-level L1 categories — by popularity — so the most frequently browsed subcategories surface first.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION: Iteration 2 Results -->
+    <section class="cs-section fade-up" aria-labelledby="results-heading">
+      <div class="cs-section__label">Iteration 2 · Feb 3 – Mar 3, 2026</div>
+      <h2 id="results-heading">A Clean Read — and What It Told Us</h2>
+      <p>
+        The second experiment ran for three weeks (one week excluded for data hygiene). The infrastructure was clean, tracking was confirmed, and both FCs were live across all Local Shop partners on HungerStation.
+      </p>
+      <div class="impact-grid" style="margin-bottom: 32px;">
+        <div class="impact-item">
+          <div class="impact-item__value">Stable</div>
+          <div class="impact-item__label">Overall Category ATC · Primary metric</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">Stable</div>
+          <div class="impact-item__label">GMV per Customer · Guardrail metric</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-item__value">3.29%</div>
+          <div class="impact-item__label">Featured Category CTR</div>
+        </div>
+      </div>
+      <p>
+        Featured Category ATC came in at <strong>~12.42%</strong>, compared to <strong>~35.21%</strong> in the Native Category — showing that the FC surfaces were engaging but converting at a lower rate than established browsing paths, as expected for a new surface with no personalisation yet applied.
+      </p>
+
+      <div class="callout callout--navy">
+        <div class="callout__label">The interpretation that mattered</div>
+        <p class="callout__text">
+          "Flat" looked neutral on the primary metric. But there were two important pieces of context:
+          <br><br>
+          <strong>1. Flat with zero manual effort is a meaningful baseline.</strong> We delivered the same GMV and ATC without any catalog manager touching a single partner — that's a real operational win, not a null result.
+          <br><br>
+          <strong>2. The feature was buried.</strong> Multiple other Featured Categories were already live on the HungerStation app. Customers had to scroll past existing FCs to find Trendy and New Arrivals. A feature with compromised visibility can't drive incremental behaviour — the placement issue needed to be addressed before we could expect uplift on primary metrics.
+        </p>
+      </div>
+
+      <p>
+        The recommendation from Product Analytics was to ship it — the automated FCs were doing no harm — and improve in two dimensions: <strong>making FCs more targeted</strong> (data-driven product recommendations within the FC, not just rules) and <strong>improving FC placement</strong> (bringing the FCs closer to the top of the shop page so customers reach them without scrolling).
+      </p>
+    </section>
+
+    <!-- SECTION: Vision -->
+    <section class="cs-section fade-up" aria-labelledby="vision-heading">
+      <div class="cs-section__label">What's Next</div>
+      <h2 id="vision-heading">The Vision: AI-Powered Curation</h2>
+      <p>
+        Rule-based FCs — top sellers, new arrivals, 30-day windows — were the right starting point. Automatable, auditable, easy to explain to stakeholders. But they're a blunt instrument: the same products surface for every customer at every partner, regardless of their behaviour or preferences.
+      </p>
+      <p>
+        The North Star is a Featured Category that knows what to put in it. Instead of "all products added in the last 30 days," New Arrivals surfaces the specific products most likely to be relevant to <em>this customer</em>, based on their category history and basket patterns. Instead of "products ranked by aggregate sales velocity," Trendy surfaces items trending among customers with similar profiles — not just popular in aggregate, but relevant at the individual level.
+      </p>
+      <p>
+        I built a Lovable prototype to communicate this vision before engineering resources were committed — giving stakeholders something concrete to react to rather than a written spec.
+      </p>
+      <figure class="cs-figure fade-up">
+        <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1px solid #a7f3d0; border-radius: 12px; padding: 32px; text-align: center;">
+          <p style="font-size: 1rem; color: #065f46; margin-bottom: 20px; font-weight: 500;">
+            AI-powered Featured Category curation — dynamically selecting which products appear in each FC for each customer, based on behaviour and context.
+          </p>
+          <a href="https://auto-curate-magic.lovable.app" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background: #047857; border-color: #047857; display: inline-flex; align-items: center; gap: 8px;">
+            View Live Prototype
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <figcaption class="cs-figure__caption">Built in Lovable to communicate the AI curation vision and drive stakeholder alignment before engineering commitment.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION: What I Owned -->
+    <section class="cs-section fade-up" aria-labelledby="ownership-heading">
+      <div class="cs-section__label">Product Leadership</div>
+      <h2 id="ownership-heading">What I Owned as PM</h2>
+      <ul>
+        <li><strong>0→1 product concept and strategy.</strong> Identified the discovery gap in standard Quick Commerce navigation, defined the two-type FC framework (rule-based vs occasion-based), and built the rationale that took this from a backlog idea to a funded experiment.</li>
+        <li><strong>Experiment design across both iterations.</strong> Defined hypothesis, metric selection (primary: Category ATC; guardrail: GMV per Customer), traffic allocation, and success criteria. Made the call to stop Iteration 1 early rather than read contaminated results.</li>
+        <li><strong>Cross-functional issue resolution after Iteration 1.</strong> Diagnosed all five issues — spanning data engineering, analytics tracking, and product logic — and drove resolution with Category Management, Product Analytics, and engineering before the relaunch. Owned the re-launch readiness checklist.</li>
+        <li><strong>Cross-platform vision and stakeholder alignment.</strong> Aligned product teams across 7 platforms (Foodpanda, Talabat, PedidosYa, HungerStation, Glovo, and others) on the FC roadmap and the AI-powered future state. The €4–5M scale estimate across all platforms was the anchor for that alignment conversation.</li>
+        <li><strong>Lovable prototype for the AI vision.</strong> Built the interactive prototype to make the AI curation concept tangible to engineering, design, and leadership — faster and more effective than a written document would have been.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION: Learnings -->
+    <section class="cs-section fade-up" aria-labelledby="learnings-heading">
+      <div class="cs-section__label">Reflections</div>
+      <h2 id="learnings-heading">What I Learned</h2>
+      <ul>
+        <li><strong>Data quality is a prerequisite, not a given.</strong> Iteration 1 taught us that launching on bad infrastructure produces noise, not results. Five separate issues — data gaps, tracking bugs, logic flaws — all needed to be resolved before any signal was interpretable. The right call was to treat the broken experiment as a QA exercise rather than a failed test.</li>
+        <li><strong>"Flat with no manual effort" is a different kind of win.</strong> Product teams are trained to look for upward movement on primary metrics. But for a new surface replacing a manual process, matching existing GMV at zero operational cost is a real baseline — not a failure. The next iteration improves on it; this one establishes that the foundation doesn't hurt.</li>
+        <li><strong>Placement is a first-class product variable.</strong> The Iteration 2 signal was suppressed partly because the FCs were buried below other featured content. Discoverability of the feature — where it sits in the page hierarchy — is as important as what the feature does. This is easy to underestimate when you're focused on what's inside the FC.</li>
+        <li><strong>A working prototype unlocks alignment faster than a document.</strong> Building the AI curation vision in Lovable gave stakeholders something concrete to react to — and to share with their own engineering teams — in a way that a written spec rarely achieves. The prototype became the shared artefact for cross-platform alignment.</li>
+      </ul>
+    </section>
+
+    <!-- Navigation between case studies -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:40px; border-top: 1px solid var(--border); margin-top: 24px;">
+      <a href="case-study-2.html" class="btn btn--outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous Case Study
+      </a>
+      <a href="interview-challenge-1.html" class="btn btn--primary">
+        Interview Challenge
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__logo">Siddhant <span>Mittal</span></span>
+      <div class="footer__links">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/siddhant-mittal-5813b082/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <span class="footer__copy">© 2026 Siddhant Mittal</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -60,6 +60,21 @@ const CASE_STUDIES = [
     status: "published"
   },
 
+  {
+    id: "featured-categories",
+    type: "delivery-hero",
+    title: "Featured Categories",
+    subtitle: "Delivery Hero · HungerStation · Consumer Discovery",
+    summary: "Designed and shipped a new category type that surfaces contextual product collections — Trending, New Arrivals, and occasion-based picks — automatically across Quick Commerce platforms. Ran two experiment iterations on HungerStation, fixed five infrastructure issues between them, and delivered €650K annualised GMV.",
+    metrics: ["€650K GMV", "3.29% FC CTR", "7 Platforms"],
+    tags: ["Consumer Experience", "A/B Testing", "Quick Commerce", "Experimentation"],
+    file: "case-study-3.html",
+    color: "#065f46",
+    image: "fc_backdrop.svg",
+    featured: true,
+    status: "published"
+  },
+
   // ── INTERVIEW CHALLENGES ─────────────────────────────────────────────────────
 
   {
