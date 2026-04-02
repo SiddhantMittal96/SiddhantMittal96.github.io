@@ -72,7 +72,7 @@
         <p class="cs-hero__label">Case Study · Delivery Hero · Consumer Discovery</p>
         <h1 class="cs-hero__title">Featured Categories</h1>
         <p class="cs-hero__subtitle">
-          Quick Commerce navigation is built for the customer who knows what they want. Featured Categories is for everyone else — surfacing trending products, new arrivals, and seasonal picks automatically, without any manual curation overhead. Built 0→1 on HungerStation and validated through two rounds of A/B experimentation.
+          Featured Categories existed as a feature — built for manual curation, proven to work, but adopted by only ~10% of partners globally. This case study is about automating them: making every partner benefit without any curation overhead. Validated through two rounds of A/B experimentation on HungerStation.
         </p>
         <div class="cs-metrics" aria-label="Key outcomes" style="border-top:none; padding-top:0;">
           <div class="cs-metric">
@@ -103,53 +103,43 @@
         Quick Commerce category navigation — Beverages, Dairy, Snacks, Fresh Produce — is optimised for the customer with intent. They open the app knowing they want oat milk, navigate to Dairy &amp; Alternatives, and find it. The path is direct. This model works well for a significant share of sessions.
       </p>
       <p>
-        But a large share of sessions don't start with intent. A customer opens a local shop, browses without a specific goal, and either converts on something that catches their eye or exits. In these sessions, standard navigation is largely passive: it waits to be used rather than surfacing anything useful to the browsing customer.
+        But a large share of sessions don't start with intent. A customer opens a shop, browses without a specific goal, and either converts on something that catches their eye or exits. Standard navigation is largely passive in these moments — it waits to be used rather than surfacing anything useful to the browsing customer.
       </p>
       <p>
-        The gap: there was no automated mechanism to surface contextual signals — what's trending at this partner right now, what just arrived this week, what seasonal moment we're in. Catalog Managers could create curated collections manually, but this didn't scale. Manual curation meant inconsistency across partners, slow response to trends, and significant operational overhead — even for regional and local teams, it simply doesn't scale across thousands of partners.
+        Featured Categories already existed as a feature to address exactly this. Designed for manual curation by local and regional teams, they surfaced seasonal picks, trending products, and promotional collections above the standard category rail. Where they were used, they performed strongly — exactly the kind of contextual, inspiring surface that turns browsers into buyers.
       </p>
       <div class="callout callout--blue">
-        <div class="callout__label">The discovery opportunity</div>
+        <div class="callout__label">The adoption problem</div>
         <p class="callout__text">
-          Category browsing accounts for <strong>over 50% of shopping sessions</strong> in Quick Commerce. Making that first screen more contextual — surfacing something relevant the customer wasn't looking for — is one of the highest-leverage surfaces for driving incremental add-to-cart and basket size.
+          When I looked at actual usage, only <strong>~10% of partners globally</strong> had Featured Categories set up. The feature worked — but the manual curation required to populate it meant that 90% of partners were simply not using it at all.
         </p>
       </div>
       <p>
-        The question I started with: can we make the product surface feel alive and contextual — automatically, at partner scale — without putting any additional burden on the catalog team?
+        The question I started with: can we automate FC population so that every partner gets the benefit — without any manual effort from local or regional teams?
       </p>
     </section>
 
     <!-- SECTION: The Solution -->
     <section class="cs-section fade-up" aria-labelledby="solution-heading">
       <div class="cs-section__label">The Solution</div>
-      <h2 id="solution-heading">What Featured Categories Are</h2>
+      <h2 id="solution-heading">Automating Featured Categories</h2>
       <p>
-        Featured Categories are a special category type designed to inspire and recommend products to customers — surfacing seasonal picks, promotional items, and contextual collections across both local partner shops and Delivery Hero's own darkstores. They sit above the standard category rail, visible when the customer first opens a shop. Unlike standard categories (which are static and manually maintained), FCs are populated automatically using data-driven rules, with no per-partner manual curation required.
+        Featured Categories are a special category type designed to inspire and recommend — surfacing seasonal picks, trending products, and promotional collections above the standard rail, across both local partner shops and Delivery Hero's own darkstores. The feature existed. The performance signal was clear. The problem was reach.
       </p>
       <p>
-        I defined two types, designed to cover different discovery moments:
+        The experiment was built around a simple hypothesis: if we could populate FCs automatically using data-driven rules, we could unlock the feature for the 90% of partners who would never have them through manual curation alone. The first slice focused on two rule-based FC types:
       </p>
 
       <div class="callout callout--navy" style="margin-bottom: 20px;">
-        <div class="callout__label">Rule-Based Featured Categories (automated)</div>
+        <div class="callout__label">Rule-Based Featured Categories — first experiment slice</div>
         <p class="callout__text">
-          Populated automatically from product and sales data:
-          <br><br>
-          <strong>Trendy</strong> — Products ranked by sales velocity over the last 30 days. What customers at this specific partner are actually buying right now.<br><br>
-          <strong>New Arrivals</strong> — Products added to the partner's catalog in the last 30 days. Fresh stock surfaced automatically the moment it's listed.<br><br>
-          <strong>Back in Stock</strong> — Previously unavailable products now available again. Useful for recurring purchases and products with variable supply.
-        </p>
-      </div>
-
-      <div class="callout callout--blue">
-        <div class="callout__label">Occasion-Based Featured Categories (contextual)</div>
-        <p class="callout__text">
-          Pre-curated product collections activated on a schedule, tied to cultural or seasonal moments: <strong>Ramadan, Easter, Back to School, Summer Essentials</strong>. Visible across relevant partners in the relevant market during the relevant window — without any Catalog Manager touching a partner-by-partner configuration.
+          <strong>Trendy</strong> — Products ranked by sales velocity over the last 30 days. What customers at this specific partner are actually buying right now, surfaced automatically.<br><br>
+          <strong>New Arrivals</strong> — Products added to the partner's catalog in the last 30 days. Fresh stock surfaced the moment it's listed, with no manual intervention required.
         </p>
       </div>
 
       <p>
-        The architecture was deliberately simple: data pipelines populate each FC based on its rule. A Catalog Manager or market team configures which FCs to activate; the system handles partner-level population from there. No per-partner manual curation, no ops overhead.
+        Deliberately starting simple: two rules, clean data signals, no configuration burden on local teams. If automation could match or approach the performance of manually curated FCs, it would validate the approach for scaling to all partner types and more FC variants.
       </p>
     </section>
 
