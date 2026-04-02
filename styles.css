@@ -1359,6 +1359,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
   color: var(--navy);
   text-align: center;
   cursor: default;
+}
 .sdiff-btn {
   display: inline-flex;
   align-items: center;
@@ -1529,7 +1530,7 @@ p  { color: var(--text-muted); line-height: 1.75; }
   .sdiff-card { min-width: unset; }
 }
 @media (max-width: 768px) {
-  .nav__links { display: none; }
+  .nav__links { display: none !important; }
   .nav__links.open {
     display: flex;
     flex-direction: column;
